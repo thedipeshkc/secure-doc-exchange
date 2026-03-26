@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="section">
+
+    <div class="document-header">
+        <h2>{{ document.filename }}</h2>
+        <span class="status-badge">{{ document.status }}</span>
+    </div>
+
+    <div class="document-details">
+        <div class="detail-row">
+            <span class="detail-label">Sent By</span>
+            <span>{{ document.sender.username }}</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Sent To</span>
+            <span>{{ document.receiver.username }}</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Date Sent</span>
+            <span>{{ document.uploaded_at.strftime('%Y-%m-%d %H:%M') }}</span>
+        </div>
+        <div class="detail-row">
+            <span class="detail-label">Status</span>
+            <span>{{ document.status }}</span>
+        </div>
+    </div>
+
+    <div class="document-actions">
+        {% if current_user.id == document.receiver_id %}
+            <a href="/document/{{ document.id }}/download" class="btn-primary">
+                Download Decrypted File
+            </a>
+            {% if document.status != 'Approved' %}
+                <a href="/document/{{ document.id }}/approve" class="btn-approve">
+                    Approve Document
+                </a>
+            {% endif %}
+        {% endif %}
+        <a href="/dashboard" class="btn-secondary">Back to Dashboard</a>
+    </div>
+
+    <div class="section" style="margin-top: 30px;">
+        <h3>Audit Log</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Performed By</th>
+                    <th>Date and Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in audit_logs %}
+                <tr>
+                    <td>{{ log.action }}</td>
+                    <td>{{ log.user.username }}</td>
+                    <td>{{ log.performed_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}

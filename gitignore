@@ -1,0 +1,7 @@
+# Never upload these
+secret.key
+database.db
+uploads/
+*.pyc
+__pycache__/
+.env

@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+nav {
+    background-color: #1a1a2e;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #4fc3f7;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.auth-box {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.auth-box h2 {
+    margin-bottom: 25px;
+    color: #1a1a2e;
+    text-align: center;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a1a2e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-box button:hover {
+    background-color: #4fc3f7;
+}
+
+.auth-box p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-box a {
+    color: #4fc3f7;
+    text-decoration: none;
+}
+
+.alert {
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.alert.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.alert.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+.btn-primary {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-primary:hover {
+    background-color: #3d5166;
+}
+
+.dashboard-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 25px;
+}
+
+.section h3 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead {
+    background-color: #f5f5f5;
+}
+
+th {
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #fafafa;
+}
+
+.empty-message {
+    color: #999;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+.document-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.document-header h2 {
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+.status-badge {
+    background-color: #2c3e50;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.document-details {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 25px;
+}
+
+.detail-row {
+    display: flex;
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    width: 150px;
+    font-weight: bold;
+    color: #555;
+}
+
+.document-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #2c3e50;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid #2c3e50;
+}
+
+.btn-secondary:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-approve {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-approve:hover {
+    background-color: #2ecc71;
+}

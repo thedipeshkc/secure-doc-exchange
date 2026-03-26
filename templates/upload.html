@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="auth-box">
+
+    <h2>Send Document</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Recipient Email</label>
+        <input type="email" name="receiver_email" placeholder="Enter recipient email" required>
+
+        <label>Choose File</label>
+        <input type="file" name="file" required>
+
+        <button type="submit">Encrypt and Send</button>
+
+    </form>
+
+    <p><a href="/dashboard">Back to Dashboard</a></p>
+
+</div>
+
+{% endblock %}

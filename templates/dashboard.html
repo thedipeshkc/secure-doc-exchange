@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    <div class="dashboard-header">
+        <h2>Welcome, {{ current_user.username }}</h2>
+        <a href="/upload" class="btn-primary">Send Document</a>
+    </div>
+
+    <div class="dashboard-sections">
+
+        <div class="section">
+            <h3>Documents Sent</h3>
+            {% if sent_documents %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Filename</th>
+                            <th>Sent To</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for doc in sent_documents %}
+                        <tr>
+                            <td>{{ doc.filename }}</td>
+                            <td>{{ doc.receiver.username }}</td>
+                            <td>{{ doc.uploaded_at.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ doc.status }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="empty-message">You have not sent any documents yet.</p>
+            {% endif %}
+        </div>
+
+        <div class="section">
+            <h3>Documents Received</h3>
+            {% if received_documents %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Filename</th>
+                            <th>Sent By</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for doc in received_documents %}
+                        <tr>
+                            <td>{{ doc.filename }}</td>
+                            <td>{{ doc.sender.username }}</td>
+                            <td>{{ doc.uploaded_at.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ doc.status }}</td>
+                            <td>
+                                <a href="/document/{{ doc.id }}">View</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="empty-message">You have not received any documents yet.</p>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
