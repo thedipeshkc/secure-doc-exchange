@@ -1,8 +1,8 @@
-Design and Implementation of a Secure Document Exchange System
+**Design and Implementation of a Secure Document Exchange System
 
-dipeshkc.pythonanywhere.com
+dipeshkc.pythonanywhere.com**
 
-#HOW TO USE THE SYSTEM
+**HOW TO USE THE SYSTEM**
 - Register —Create a free account with your email and password —hashed and stored securely
 - Upload —Click Send Document, enter recipient email, choose any file —it encrypts automatically
 - Receive —Recipient logs in and sees the document on their dashboard with pending status
